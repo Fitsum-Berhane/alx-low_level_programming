@@ -3,10 +3,10 @@
 #include <stdio.h>
 
 /**
-  *main - Checks if a random number is >, < or =0.
-  *
-  *return: Always return 0 (success)
-  */
+ * main - Determines if a number is positive, negative or zero.
+ *
+ * Return: Always 0 (Success)
+ */
 
 int main(void)
 {
