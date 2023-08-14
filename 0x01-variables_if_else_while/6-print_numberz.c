@@ -1,14 +1,19 @@
 #include <stdio.h>
 /**
- * Description - prints numbers in single digit
- * main - Entry point
+ * main - This prints the nubmers 0 up to 9
  *
  * Return: Always 0 (success)
  */
 
 int main(void)
 {
-	for (char a = 0; a < 10; a++)
-		putchar(a);
+	int i;
+
+	for (i = 0; i < 10; i++)
+	{
+		putchar(i);
+	}
+	putchar('\n');
 	return (0);
 }
+
