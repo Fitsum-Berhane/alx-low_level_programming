@@ -1,26 +1,11 @@
-#include "main.h"
+#include <stdio.h>
 /**
-* main - calls functin program
-*
-* Return: always 0 (success)
-*/
+ * main - prints _putchar
+ * Return: Always 0.
+ */
 
-int program(void);
-int main(void)
-{
-	program();
-	return (0);
-}
-
-/**
-* program - prints _putchar
-*
-* Return: always 0 (success)
-*/
-
-int program(void)
+int main (void) 
 {
 	printf("_putchar\n");
+	return (0);
 }
-
-
