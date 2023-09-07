@@ -1,63 +1,46 @@
-#include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
+#include "main.h"
 
 /**
- * _calloc - Allocates memory for an array and sets it to zero.
- * @nmemb: Number of elements in the array.
- * @size: Size of each element in bytes.
+ * *_memset - fills memory with a constant byte
+ * @s: memory area to be filled
+ * @b: char to copy
+ * @n: number of times to copy b
  *
- * Return: Pointer to the allocated memory.
+ * Return: pointer to the memory area s
+ */
+char *_memset(char *s, char b, unsigned int n)
+{
+	unsigned int i;
+
+	for (i = 0; i < n; i++)
+	{
+		s[i] = b;
+	}
+
+	return (s);
+}
+
+/**
+ * *_calloc - allocates memory for an array
+ * @nmemb: number of elements in the array
+ * @size: size of each element
+ *
+ * Return: pointer to allocated memory
  */
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	void *ptr;
-	unsigned int total_size;
+	char *ptr;
 
 	if (nmemb == 0 || size == 0)
 		return (NULL);
 
-	total_size = nmemb * size;
-
-	ptr = malloc(total_size);
+	ptr = malloc(size * nmemb);
 
 	if (ptr == NULL)
 		return (NULL);
 
-	memset(ptr, 0, total_size);
+	_memset(ptr, 0, nmemb * size);
 
 	return (ptr);
-}
-
-/**
- * main - Entry point of the program.
- *
- * Return: Always 0.
- */
-int main(void)
-{
-	unsigned int nmemb = 98;
-	unsigned int i, size = sizeof(char);
-	char *a = _calloc(nmemb, size);
-
-	if (a == NULL)
-	{
-		printf("Memory allocation failed.\n");
-		return (1);
-	}
-
-	strcpy(a, "Best");
-	strcpy(a + 4, " School! :)\n");
-	a[97] = '!';
-
-	for (i = 0; i < nmemb; i++)
-	{
-		printf("0x%02x ", a[i]);
-		if ((i + 1) % 10 == 0)
-			printf("\n");
-	}
-	printf("\n");
-
-	free(a);
-	return (0);
 }
